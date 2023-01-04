@@ -1,0 +1,37 @@
+<div class="header">
+    <div class="nav">
+    <li>
+        <a href="/">В начало</a>
+    </li>
+    </div>
+    <div class="log">
+    <li id="links-log">
+        <% unless User.find_by_id(session[:current_user_id]).nil? %>
+            <a href="/log/sign_out">Log Out</a>
+        <% else %>
+            <a href="/log/sign_in">Log In</a>
+            <a href="/users/new">Sign Up</a>
+        <% end %>
+    </li>
+    </div>
+</div>
+<div class="main">
+    <div class="container">
+        <table id="show-table" class="table table-dark">
+            <tr>
+                <th colspan="2" >Автоморфные числа</th>
+            </tr>
+            <tr>
+                <th>Число</th>
+                <th>Квадрат числа</th>
+                <% @arr.each do |elem| %>
+                    <tr><td><%= elem %></td><td><%= elem**2 %></td></tr>
+                <% end %>
+            </tr>
+        </table>
+        <%= button_to 'Назад', root_path, method: :get, class: 'btn btn-primary' %>
+    </div>
+</div>
+<div class="footer">
+</div>
+
