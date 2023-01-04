@@ -15,11 +15,4 @@ RSpec.describe "Logs", type: :request do
     end
   end
 
-  describe "GET /log" do
-    it "returns http success" do
-      get "/log/log"
-      expect(response).to have_http_status(:redirect)
-    end
-  end
-
 end

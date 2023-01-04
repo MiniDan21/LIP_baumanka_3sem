@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'xml/xml'
   resources :users
   root 'homepage#index'
   get 'homepage/index'
